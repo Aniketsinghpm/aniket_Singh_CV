@@ -145,10 +145,22 @@
     .skill-icon { width: 44px; height: 44px; flex-shrink: 0; background: linear-gradient(135deg, var(--primary), #5a52e0); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(108,99,255,0.3); }
     .skill-name { font-size: 0.86rem; font-weight: 600; color: var(--text2); line-height: 1.4; }
     .tech-section { margin-top: 52px; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 36px; }
-    .tech-section h3 { font-size: 0.85rem; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 22px; }
+    .tech-category { margin-bottom: 28px; }
+    .tech-category:last-child { margin-bottom: 0; }
+    .tech-category-label {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; margin-bottom: 12px;
+      display: flex; align-items: center; gap: 8px;
+    }
     .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; }
     .tech-tag { background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.2); color: var(--primary2); padding: 7px 16px; border-radius: 50px; font-size: 0.82rem; font-weight: 500; transition: all 0.2s; }
     .tech-tag:hover { background: rgba(108,99,255,0.2); border-color: var(--primary); color: #fff; }
+    .tech-tag.green { background: rgba(0,255,204,0.07); border-color: rgba(0,255,204,0.2); color: var(--accent2); }
+    .tech-tag.green:hover { background: rgba(0,255,204,0.15); border-color: var(--accent2); color: #fff; }
+    .tech-tag.blue { background: rgba(0,212,255,0.07); border-color: rgba(0,212,255,0.2); color: var(--accent); }
+    .tech-tag.blue:hover { background: rgba(0,212,255,0.15); border-color: var(--accent); color: #fff; }
+    .tech-tag.gold { background: rgba(255,215,0,0.07); border-color: rgba(255,215,0,0.2); color: var(--gold); }
+    .tech-tag.gold:hover { background: rgba(255,215,0,0.15); border-color: var(--gold); color: #fff; }
 
     /* ── CASE STUDIES ── */
     .case-study-list { display: flex; flex-direction: column; gap: 40px; }
@@ -383,24 +395,88 @@
       <div class="skill-card"><div class="skill-icon">🛡️</div><span class="skill-name">Risk Management &amp; Continuous Improvement</span></div>
     </div>
     <div class="tech-section">
-      <h3>🛠️ Technical Tools &amp; Skills</h3>
-      <div class="tech-tags">
-        <span class="tech-tag">Product Lifecycle Management</span>
-        <span class="tech-tag">Agile &amp; Scrum</span>
-        <span class="tech-tag">Project Planning</span>
-        <span class="tech-tag">Roadmap Development</span>
-        <span class="tech-tag">SQL</span>
-        <span class="tech-tag">Tableau</span>
-        <span class="tech-tag">Data Analysis</span>
-        <span class="tech-tag">HLD / LLD Documentation</span>
-        <span class="tech-tag">Business Rules Engine (BRE)</span>
-        <span class="tech-tag">Loan Origination System (LOS)</span>
-        <span class="tech-tag">Shopify</span>
-        <span class="tech-tag">Google Platforms</span>
-        <span class="tech-tag">AI-Driven Forecasting</span>
-        <span class="tech-tag">Route Optimization</span>
-        <span class="tech-tag">Go-To-Market Strategy</span>
+
+      <div class="tech-category">
+        <div class="tech-category-label" style="color: var(--primary2);">📋 Project & Product Management Tools</div>
+        <div class="tech-tags">
+          <span class="tech-tag">Jira</span>
+          <span class="tech-tag">Confluence</span>
+          <span class="tech-tag">Trello</span>
+          <span class="tech-tag">Asana</span>
+          <span class="tech-tag">Notion</span>
+          <span class="tech-tag">Monday.com</span>
+          <span class="tech-tag">MS Project</span>
+        </div>
       </div>
+
+      <div class="tech-category">
+        <div class="tech-category-label" style="color: var(--accent2);">📊 Data, Analytics & Reporting</div>
+        <div class="tech-tags">
+          <span class="tech-tag green">SQL</span>
+          <span class="tech-tag green">Tableau</span>
+          <span class="tech-tag green">Google Analytics</span>
+          <span class="tech-tag green">Mixpanel</span>
+          <span class="tech-tag green">Power BI</span>
+          <span class="tech-tag green">Excel / Google Sheets</span>
+          <span class="tech-tag green">A/B Testing</span>
+          <span class="tech-tag green">Funnel Analysis</span>
+          <span class="tech-tag green">Cohort Analysis</span>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <div class="tech-category-label" style="color: var(--accent);">🎨 Design, Wireframing & Prototyping</div>
+        <div class="tech-tags">
+          <span class="tech-tag blue">Figma</span>
+          <span class="tech-tag blue">Miro</span>
+          <span class="tech-tag blue">Balsamiq</span>
+          <span class="tech-tag blue">User Story Mapping</span>
+          <span class="tech-tag blue">HLD / LLD Documentation</span>
+          <span class="tech-tag blue">Wireframing</span>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <div class="tech-category-label" style="color: var(--gold);">⚙️ Technical & Domain Knowledge</div>
+        <div class="tech-tags">
+          <span class="tech-tag gold">Business Rules Engine (BRE)</span>
+          <span class="tech-tag gold">Loan Origination System (LOS)</span>
+          <span class="tech-tag gold">API Integration</span>
+          <span class="tech-tag gold">AI-Driven Forecasting</span>
+          <span class="tech-tag gold">Route Optimization</span>
+          <span class="tech-tag gold">Shopify</span>
+          <span class="tech-tag gold">Google Platforms</span>
+          <span class="tech-tag gold">Agile &amp; Scrum</span>
+          <span class="tech-tag gold">PRINCE2</span>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <div class="tech-category-label" style="color: var(--primary2);">🧠 PM Frameworks & Strategy</div>
+        <div class="tech-tags">
+          <span class="tech-tag">OKRs</span>
+          <span class="tech-tag">RICE Framework</span>
+          <span class="tech-tag">Jobs-to-be-Done (JTBD)</span>
+          <span class="tech-tag">North Star Metric</span>
+          <span class="tech-tag">MoSCoW Prioritization</span>
+          <span class="tech-tag">Go-To-Market Strategy</span>
+          <span class="tech-tag">Product Roadmapping</span>
+          <span class="tech-tag">Sprint Planning</span>
+          <span class="tech-tag">Kano Model</span>
+          <span class="tech-tag">HEART Framework</span>
+          <span class="tech-tag">AARRR Pirate Metrics</span>
+          <span class="tech-tag">Design Thinking</span>
+          <span class="tech-tag">Lean Startup / MVP</span>
+          <span class="tech-tag">Customer Journey Mapping</span>
+          <span class="tech-tag">Net Promoter Score (NPS)</span>
+          <span class="tech-tag">Dual-Track Agile</span>
+          <span class="tech-tag">Opportunity Scoring</span>
+          <span class="tech-tag">Value vs. Effort Matrix</span>
+          <span class="tech-tag">Continuous Discovery</span>
+          <span class="tech-tag">Impact Mapping</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
