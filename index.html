@@ -24,19 +24,9 @@
       --glow: rgba(108,99,255,0.25);
       --glow2: rgba(0,212,255,0.2);
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* Scrollbar */
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
@@ -44,7 +34,7 @@
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 1000;
-      background: rgba(10,14,26,0.85);
+      background: rgba(10,14,26,0.88);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
       padding: 0 48px;
@@ -55,466 +45,224 @@
       font-size: 1.3rem; font-weight: 800;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
     }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a {
-      color: var(--text2); text-decoration: none;
-      font-size: 0.88rem; font-weight: 500;
-      transition: color 0.2s; letter-spacing: 0.3px;
-    }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a { color: var(--text2); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
 
     /* ── HERO ── */
     #home {
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
-      text-align: center;
-      padding: 120px 20px 80px;
+      text-align: center; padding: 120px 20px 80px;
       position: relative; overflow: hidden;
       background: radial-gradient(ellipse at 20% 50%, rgba(108,99,255,0.15) 0%, transparent 60%),
                   radial-gradient(ellipse at 80% 20%, rgba(0,212,255,0.12) 0%, transparent 50%),
                   radial-gradient(ellipse at 60% 80%, rgba(0,255,204,0.08) 0%, transparent 50%),
                   var(--bg);
     }
-    .hero-bg-circle {
-      position: absolute; border-radius: 50%;
-      animation: float 6s ease-in-out infinite;
-    }
-    .hero-bg-circle:nth-child(1) {
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(108,99,255,0.08), transparent 70%);
-      top: -100px; right: -100px; animation-delay: 0s;
-    }
-    .hero-bg-circle:nth-child(2) {
-      width: 350px; height: 350px;
-      background: radial-gradient(circle, rgba(0,212,255,0.07), transparent 70%);
-      bottom: -80px; left: -60px; animation-delay: 3s;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-    .hero-content { position: relative; z-index: 1; max-width: 820px; }
+    .hero-bg-circle { position: absolute; border-radius: 50%; animation: float 6s ease-in-out infinite; }
+    .hero-bg-circle:nth-child(1) { width: 500px; height: 500px; background: radial-gradient(circle, rgba(108,99,255,0.08), transparent 70%); top: -100px; right: -100px; }
+    .hero-bg-circle:nth-child(2) { width: 350px; height: 350px; background: radial-gradient(circle, rgba(0,212,255,0.07), transparent 70%); bottom: -80px; left: -60px; animation-delay: 3s; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
 
+    .hero-content { position: relative; z-index: 1; max-width: 840px; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(108,99,255,0.12);
-      border: 1px solid rgba(108,99,255,0.3);
-      color: var(--primary2);
-      padding: 7px 18px; border-radius: 50px;
-      font-size: 0.82rem; font-weight: 600;
-      margin-bottom: 28px; letter-spacing: 0.5px;
+      background: rgba(108,99,255,0.12); border: 1px solid rgba(108,99,255,0.3);
+      color: var(--primary2); padding: 7px 18px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600; margin-bottom: 28px; letter-spacing: 0.5px;
     }
-    .badge-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--accent2);
-      box-shadow: 0 0 8px var(--accent2);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(0.8); }
-    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent2); box-shadow: 0 0 8px var(--accent2); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.8)} }
 
-    .hero-content h1 {
-      font-size: 4rem; font-weight: 900;
-      line-height: 1.1; margin-bottom: 16px;
-      letter-spacing: -2px;
-    }
+    .hero-content h1 { font-size: 4rem; font-weight: 900; line-height: 1.1; margin-bottom: 16px; letter-spacing: -2px; }
     .hero-content h1 .name-gradient {
       background: linear-gradient(135deg, #fff 0%, var(--primary2) 50%, var(--accent) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .hero-content .subtitle {
-      font-size: 1.2rem; color: var(--text2);
-      margin-bottom: 20px; font-weight: 400;
-    }
-    .hero-content .subtitle span {
-      color: var(--accent); font-weight: 600;
-    }
-    .hero-tagline {
-      font-size: 1rem; color: var(--text3);
-      max-width: 560px; margin: 0 auto 40px; line-height: 1.9;
-    }
+    .hero-content .subtitle { font-size: 1.2rem; color: var(--text2); margin-bottom: 20px; font-weight: 400; }
+    .hero-content .subtitle span { color: var(--accent); font-weight: 600; }
+    .hero-tagline { font-size: 1rem; color: var(--text3); max-width: 560px; margin: 0 auto 40px; line-height: 1.9; }
 
-    .hero-stats {
-      display: flex; gap: 20px;
-      justify-content: center; margin-bottom: 44px; flex-wrap: wrap;
-    }
+    .hero-stats { display: flex; gap: 20px; justify-content: center; margin-bottom: 44px; flex-wrap: wrap; }
     .stat {
-      background: var(--card);
-      border: 1px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       border-radius: 16px; padding: 20px 28px; text-align: center;
-      position: relative; overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
     }
-    .stat:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px var(--glow);
-    }
-    .stat::before {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-    }
-    .stat-num {
-      font-size: 2rem; font-weight: 800;
-      background: linear-gradient(135deg, var(--primary2), var(--accent));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      display: block;
-    }
-    .stat-label {
-      font-size: 0.72rem; color: var(--text3);
-      text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;
-    }
+    .stat:hover { transform: translateY(-4px); box-shadow: 0 12px 40px var(--glow); }
+    .stat::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--primary), var(--accent)); }
+    .stat-num { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, var(--primary2), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block; }
+    .stat-label { font-size: 0.72rem; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
 
     .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn {
-      padding: 14px 32px; border-radius: 10px;
-      font-size: 0.92rem; font-weight: 600;
-      cursor: pointer; text-decoration: none;
-      transition: all 0.25s; display: inline-block; font-family: 'Inter', sans-serif;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), #5a52e0);
-      color: #fff;
-      box-shadow: 0 4px 20px rgba(108,99,255,0.4);
-    }
+    .btn { padding: 14px 32px; border-radius: 10px; font-size: 0.92rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), #5a52e0); color: #fff; box-shadow: 0 4px 20px rgba(108,99,255,0.4); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(108,99,255,0.5); }
-    .btn-ghost {
-      background: transparent; color: var(--text);
-      border: 1px solid rgba(255,255,255,0.15);
-    }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.15); }
     .btn-ghost:hover { background: rgba(255,255,255,0.05); transform: translateY(-2px); }
+    .btn-download { background: linear-gradient(135deg, #00b894, #00d4ff); color: #fff; box-shadow: 0 4px 20px rgba(0,212,255,0.3); }
+    .btn-download:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,255,0.45); }
 
-    /* ── SECTION BASE ── */
+    /* ── SECTIONS ── */
     section { padding: 100px 48px; }
     section:nth-child(even) { background: var(--bg2); }
     .section-inner { max-width: 1140px; margin: 0 auto; }
     .section-header { text-align: center; margin-bottom: 64px; }
-    .section-label {
-      display: inline-block;
-      color: var(--primary2); font-size: 0.8rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-    .section-header h2 {
-      font-size: 2.4rem; font-weight: 800;
-      color: var(--text); margin-bottom: 12px; letter-spacing: -1px;
-    }
-    .section-header h2 span {
-      background: linear-gradient(135deg, var(--primary2), var(--accent));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
+    .section-label { display: inline-block; color: var(--primary2); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .section-header h2 { font-size: 2.4rem; font-weight: 800; color: var(--text); margin-bottom: 12px; letter-spacing: -1px; }
+    .section-header h2 span { background: linear-gradient(135deg, var(--primary2), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .section-header p { color: var(--text3); font-size: 1rem; }
-    .section-line {
-      width: 48px; height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      border-radius: 2px; margin: 14px auto 0;
-    }
+    .section-line { width: 48px; height: 3px; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 2px; margin: 14px auto 0; }
 
     /* ── ABOUT ── */
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1.1fr;
-      gap: 60px; align-items: start;
-    }
-    .about-text h3 {
-      font-size: 1.6rem; font-weight: 800;
-      color: var(--text); margin-bottom: 18px;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: start; }
+    .about-text h3 { font-size: 1.6rem; font-weight: 800; color: var(--text); margin-bottom: 18px; }
     .about-text p { color: var(--text2); margin-bottom: 16px; font-size: 0.96rem; line-height: 1.9; }
-    .about-details { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
-    .detail-row {
-      display: flex; align-items: center; gap: 14px;
-      padding: 12px 16px; background: var(--card);
-      border: 1px solid var(--border); border-radius: 10px;
-      transition: border-color 0.2s;
-    }
+    .about-details { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+    .detail-row { display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; transition: border-color 0.2s; }
     .detail-row:hover { border-color: var(--primary); }
     .detail-icon { font-size: 1.1rem; width: 26px; text-align: center; }
     .detail-label { font-weight: 600; color: var(--primary2); min-width: 80px; font-size: 0.85rem; }
     .detail-val { color: var(--text2); font-size: 0.9rem; }
     .detail-val a { color: var(--accent); text-decoration: none; }
-    .detail-val a:hover { text-decoration: underline; }
 
-    .highlights-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px; padding: 32px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
-    }
-    .highlights-card h4 {
-      font-size: 0.9rem; font-weight: 700;
-      color: var(--text3); text-transform: uppercase;
-      letter-spacing: 1.5px; margin-bottom: 22px;
-    }
-    .highlight-item {
-      display: flex; gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
+    .highlights-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+    .highlights-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 22px; }
+    .highlight-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
     .highlight-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .hi-icon {
-      width: 38px; height: 38px; flex-shrink: 0;
-      background: rgba(108,99,255,0.12);
-      border: 1px solid rgba(108,99,255,0.2);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-    }
-    .highlight-item strong {
-      display: block; font-size: 0.88rem;
-      color: var(--text); margin-bottom: 3px; font-weight: 600;
-    }
+    .hi-icon { width: 38px; height: 38px; flex-shrink: 0; background: rgba(108,99,255,0.12); border: 1px solid rgba(108,99,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .highlight-item strong { display: block; font-size: 0.88rem; color: var(--text); margin-bottom: 3px; font-weight: 600; }
     .highlight-item span { font-size: 0.8rem; color: var(--text3); line-height: 1.6; }
 
     /* ── SKILLS ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    .skill-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px; padding: 20px 20px;
-      display: flex; align-items: center; gap: 14px;
-      transition: all 0.3s; cursor: default;
-      position: relative; overflow: hidden;
-    }
-    .skill-card::before {
-      content: ''; position: absolute;
-      inset: 0; opacity: 0;
-      background: linear-gradient(135deg, rgba(108,99,255,0.08), rgba(0,212,255,0.05));
-      transition: opacity 0.3s;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; display: flex; align-items: center; gap: 14px; transition: all 0.3s; position: relative; overflow: hidden; }
+    .skill-card::before { content: ''; position: absolute; inset: 0; opacity: 0; background: linear-gradient(135deg, rgba(108,99,255,0.08), rgba(0,212,255,0.05)); transition: opacity 0.3s; }
     .skill-card:hover::before { opacity: 1; }
-    .skill-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 28px var(--glow);
-    }
-    .skill-icon {
-      width: 44px; height: 44px; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--primary), #5a52e0);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 12px rgba(108,99,255,0.3);
-    }
+    .skill-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 8px 28px var(--glow); }
+    .skill-icon { width: 44px; height: 44px; flex-shrink: 0; background: linear-gradient(135deg, var(--primary), #5a52e0); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(108,99,255,0.3); }
     .skill-name { font-size: 0.86rem; font-weight: 600; color: var(--text2); line-height: 1.4; }
-
-    .tech-section {
-      margin-top: 52px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px; padding: 36px;
-    }
-    .tech-section h3 {
-      font-size: 0.85rem; font-weight: 700;
-      color: var(--text3); text-transform: uppercase;
-      letter-spacing: 1.5px; margin-bottom: 22px;
-    }
+    .tech-section { margin-top: 52px; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 36px; }
+    .tech-section h3 { font-size: 0.85rem; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 22px; }
     .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-    .tech-tag {
-      background: rgba(108,99,255,0.1);
-      border: 1px solid rgba(108,99,255,0.2);
-      color: var(--primary2);
-      padding: 7px 16px; border-radius: 50px;
-      font-size: 0.82rem; font-weight: 500;
-      transition: all 0.2s;
+    .tech-tag { background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.2); color: var(--primary2); padding: 7px 16px; border-radius: 50px; font-size: 0.82rem; font-weight: 500; transition: all 0.2s; }
+    .tech-tag:hover { background: rgba(108,99,255,0.2); border-color: var(--primary); color: #fff; }
+
+    /* ── CASE STUDIES ── */
+    .case-study-list { display: flex; flex-direction: column; gap: 40px; }
+    .cs-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 24px; overflow: hidden;
+      transition: all 0.3s; position: relative;
     }
-    .tech-tag:hover {
-      background: rgba(108,99,255,0.2);
-      border-color: var(--primary);
-      color: #fff;
+    .cs-card:hover { border-color: rgba(108,99,255,0.5); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .cs-header {
+      padding: 32px 36px 24px;
+      background: linear-gradient(135deg, rgba(108,99,255,0.08), rgba(0,212,255,0.04));
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;
+    }
+    .cs-icon { width: 60px; height: 60px; flex-shrink: 0; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; box-shadow: 0 6px 24px var(--glow); }
+    .cs-title-block { flex: 1; }
+    .cs-tag { display: inline-block; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); color: var(--accent); padding: 3px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .cs-title-block h3 { font-size: 1.3rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+    .cs-company { font-size: 0.84rem; color: var(--text3); font-weight: 500; }
+    .cs-body { padding: 32px 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .cs-section h4 {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; margin-bottom: 12px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .cs-section h4.problem { color: #ff6b6b; }
+    .cs-section h4.approach { color: var(--gold); }
+    .cs-section h4.solution { color: var(--accent); }
+    .cs-section h4.impact { color: var(--accent2); }
+    .cs-section p { font-size: 0.88rem; color: var(--text2); line-height: 1.8; }
+    .cs-section ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .cs-section ul li { font-size: 0.87rem; color: var(--text2); display: flex; gap: 8px; line-height: 1.6; }
+    .cs-section ul li::before { content: '▸'; color: var(--primary2); flex-shrink: 0; margin-top: 2px; }
+    .cs-metrics { padding: 20px 36px 28px; display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .cs-metric {
+      background: rgba(0,255,204,0.07); border: 1px solid rgba(0,255,204,0.18);
+      color: var(--accent2); padding: 7px 16px; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 700;
     }
 
     /* ── EXPERIENCE ── */
     .timeline { position: relative; padding-left: 36px; }
-    .timeline::before {
-      content: ''; position: absolute;
-      left: 12px; top: 8px; bottom: 8px; width: 2px;
-      background: linear-gradient(to bottom, var(--primary), var(--accent), transparent);
-    }
+    .timeline::before { content: ''; position: absolute; left: 12px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--primary), var(--accent), transparent); }
     .timeline-item { position: relative; margin-bottom: 36px; }
-    .timeline-dot {
-      position: absolute; left: -29px; top: 10px;
-      width: 18px; height: 18px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border: 3px solid var(--bg);
-      box-shadow: 0 0 0 2px var(--primary), 0 0 16px var(--glow);
-    }
-    .exp-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px; padding: 28px 32px;
-      transition: all 0.3s; position: relative; overflow: hidden;
-    }
-    .exp-card::before {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      opacity: 0; transition: opacity 0.3s;
-    }
+    .timeline-dot { position: absolute; left: -29px; top: 10px; width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--primary), 0 0 16px var(--glow); }
+    .exp-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 28px 32px; transition: all 0.3s; position: relative; overflow: hidden; }
+    .exp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--primary), var(--accent)); opacity: 0; transition: opacity 0.3s; }
     .exp-card:hover::before { opacity: 1; }
-    .exp-card:hover {
-      border-color: rgba(108,99,255,0.4);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-      transform: translateX(4px);
-    }
+    .exp-card:hover { border-color: rgba(108,99,255,0.4); box-shadow: 0 12px 40px rgba(0,0,0,0.4); transform: translateX(4px); }
     .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 6px; }
     .exp-role { font-size: 1.15rem; font-weight: 700; color: var(--text); }
-    .exp-badge {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #fff; padding: 4px 14px; border-radius: 50px;
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px;
-    }
+    .exp-badge { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; padding: 4px 14px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; }
     .exp-company { color: var(--accent); font-weight: 600; font-size: 0.92rem; margin-bottom: 4px; }
     .exp-meta { color: var(--text3); font-size: 0.82rem; margin-bottom: 18px; }
     .exp-points { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .exp-points li {
-      display: flex; gap: 10px;
-      font-size: 0.88rem; color: var(--text2); line-height: 1.7;
-    }
+    .exp-points li { display: flex; gap: 10px; font-size: 0.88rem; color: var(--text2); line-height: 1.7; }
     .exp-points li::before { content: '▸'; color: var(--primary2); flex-shrink: 0; margin-top: 2px; }
 
     /* ── PROJECTS ── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-      gap: 22px;
-    }
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px; padding: 28px;
-      transition: all 0.3s; display: flex; flex-direction: column;
-      position: relative; overflow: hidden;
-    }
-    .project-card::after {
-      content: ''; position: absolute;
-      bottom: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      transform: scaleX(0); transition: transform 0.3s;
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 22px; }
+    .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 28px; transition: all 0.3s; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--primary), var(--accent)); transform: scaleX(0); transition: transform 0.3s; }
     .project-card:hover::after { transform: scaleX(1); }
-    .project-card:hover {
-      border-color: rgba(108,99,255,0.4);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-    }
-    .project-icon-wrap {
-      width: 56px; height: 56px;
-      background: linear-gradient(135deg, var(--primary), #5a52e0);
-      border-radius: 16px; margin-bottom: 20px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem;
-      box-shadow: 0 6px 20px rgba(108,99,255,0.35);
-    }
+    .project-card:hover { border-color: rgba(108,99,255,0.4); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .project-icon-wrap { width: 56px; height: 56px; background: linear-gradient(135deg, var(--primary), #5a52e0); border-radius: 16px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 6px 20px rgba(108,99,255,0.35); }
     .project-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .project-company { font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; letter-spacing: 0.3px; }
+    .project-company { font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
     .project-desc { font-size: 0.87rem; color: var(--text2); margin-bottom: 20px; flex: 1; line-height: 1.8; }
     .project-metrics { display: flex; flex-wrap: wrap; gap: 7px; }
-    .metric {
-      background: rgba(0,212,255,0.08);
-      border: 1px solid rgba(0,212,255,0.18);
-      color: var(--accent); padding: 4px 12px;
-      border-radius: 50px; font-size: 0.75rem; font-weight: 600;
-    }
+    .metric { background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.18); color: var(--accent); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
 
     /* ── EDUCATION & CERTS ── */
     .edu-certs-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; }
-    .edu-card, .cert-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 20px; padding: 32px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-    }
-    .card-top {
-      display: flex; align-items: center; gap: 14px; margin-bottom: 26px;
-    }
-    .card-top-icon {
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
-    }
+    .edu-card, .cert-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.2); }
+    .card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
+    .card-top-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
     .card-top h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
     .edu-item h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
     .edu-item p { font-size: 0.86rem; color: var(--text3); margin-bottom: 4px; }
     .cert-list { display: flex; flex-direction: column; gap: 12px; }
-    .cert-item {
-      display: flex; align-items: center; gap: 14px;
-      padding: 13px 16px;
-      background: var(--card2); border: 1px solid var(--border);
-      border-radius: 12px; transition: all 0.2s;
-    }
+    .cert-item { display: flex; align-items: center; gap: 14px; padding: 13px 16px; background: var(--card2); border: 1px solid var(--border); border-radius: 12px; transition: all 0.2s; }
     .cert-item:hover { border-color: var(--primary); transform: translateX(4px); }
     .cert-icon { font-size: 1.3rem; }
     .cert-name { font-size: 0.86rem; font-weight: 600; color: var(--text2); }
 
     /* ── CONTACT ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      max-width: 900px; margin: 0 auto;
-    }
-    .contact-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px; padding: 28px 24px;
-      text-align: center;
-      transition: all 0.3s; position: relative; overflow: hidden;
-    }
-    .contact-card::before {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      opacity: 0; transition: opacity 0.3s;
-    }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+    .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 28px 24px; text-align: center; transition: all 0.3s; position: relative; overflow: hidden; }
+    .contact-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--primary), var(--accent)); opacity: 0; transition: opacity 0.3s; }
     .contact-card:hover::before { opacity: 1; }
-    .contact-card:hover {
-      border-color: rgba(108,99,255,0.4);
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px var(--glow);
-    }
-    .contact-card-icon {
-      width: 60px; height: 60px; margin: 0 auto 16px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: 18px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: 0 6px 20px var(--glow);
-    }
+    .contact-card:hover { border-color: rgba(108,99,255,0.4); transform: translateY(-6px); box-shadow: 0 16px 40px var(--glow); }
+    .contact-card-icon { width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 6px 20px var(--glow); }
     .contact-card h4 { font-size: 0.8rem; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-    .contact-card a, .contact-card span {
-      font-size: 0.92rem; font-weight: 600; color: var(--text);
-      text-decoration: none; word-break: break-all;
-    }
+    .contact-card a, .contact-card span { font-size: 0.9rem; font-weight: 600; color: var(--text); text-decoration: none; word-break: break-all; }
     .contact-card a:hover { color: var(--accent); }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      text-align: center; padding: 32px 20px;
-      color: var(--text3); font-size: 0.85rem;
-    }
-    footer .footer-name {
-      background: linear-gradient(135deg, var(--primary2), var(--accent));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      font-weight: 700;
-    }
+    footer { background: var(--bg); border-top: 1px solid var(--border); text-align: center; padding: 32px 20px; color: var(--text3); font-size: 0.85rem; }
+    .footer-name { background: linear-gradient(135deg, var(--primary2), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .cs-body { grid-template-columns: 1fr; }
+      .about-grid, .edu-certs-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       section { padding: 70px 20px; }
-      .about-grid, .edu-certs-grid { grid-template-columns: 1fr; }
       .hero-content h1 { font-size: 2.6rem; }
+      .cs-header { flex-direction: column; }
+      .cs-body { padding: 24px 20px; }
+      .cs-metrics { padding: 16px 20px 24px; }
     }
   </style>
 </head>
@@ -527,6 +275,7 @@
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#casestudies">Case Studies</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
@@ -539,10 +288,7 @@
   <div class="hero-bg-circle"></div>
   <div class="hero-bg-circle"></div>
   <div class="hero-content">
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      Available for Opportunities
-    </div>
+    <div class="hero-badge"><span class="badge-dot"></span>Available for Opportunities</div>
     <h1><span class="name-gradient">Aniket Singh</span></h1>
     <div class="subtitle">Product Manager &amp; <span>Project Manager</span></div>
     <p class="hero-tagline">
@@ -550,26 +296,15 @@
       Nearly 5 years of experience delivering scalable solutions with measurable business impact.
     </p>
     <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">5+</span>
-        <span class="stat-label">Years Experience</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">₹50Cr+</span>
-        <span class="stat-label">Disbursals Driven</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">70K+</span>
-        <span class="stat-label">Monthly Applications</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">5</span>
-        <span class="stat-label">Certifications</span>
-      </div>
+      <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat"><span class="stat-num">₹50Cr+</span><span class="stat-label">Disbursals Driven</span></div>
+      <div class="stat"><span class="stat-num">70K+</span><span class="stat-label">Monthly Applications</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Certifications</span></div>
     </div>
     <div class="hero-btns">
-      <a href="#contact" class="btn btn-primary">Get In Touch</a>
-      <a href="#experience" class="btn btn-ghost">View My Work</a>
+      <a href="#contact" class="btn btn-primary">🤝 Get In Touch</a>
+      <a href="#casestudies" class="btn btn-ghost">📂 Case Studies</a>
+      <a href="Aniket_Singh_Resume.pdf" download class="btn btn-download">📄 Download CV</a>
     </div>
   </div>
 </section>
@@ -590,69 +325,34 @@
         <p>Currently working as <strong style="color:var(--text)">Assistant Product Manager at Enterslice Pvt. Ltd.</strong>, leading the launch and optimization of financial products while managing a team of 6–7 professionals.</p>
         <p>I'm passionate about user-centric design, data-driven decision making, and building products that solve real problems at scale.</p>
         <div class="about-details">
-          <div class="detail-row">
-            <span class="detail-icon">📍</span>
-            <span class="detail-label">Location</span>
-            <span class="detail-val">Noida, India</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-icon">📧</span>
-            <span class="detail-label">Email</span>
-            <span class="detail-val"><a href="mailto:aniketthakur188@gmail.com">aniketthakur188@gmail.com</a></span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-icon">📞</span>
-            <span class="detail-label">Phone</span>
-            <span class="detail-val">+91-8383906880</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-icon">💼</span>
-            <span class="detail-label">LinkedIn</span>
-            <span class="detail-val"><a href="https://linkedin.com/in/aniket-singh-a08166233" target="_blank">linkedin.com/in/aniket-singh</a></span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-icon">🗣️</span>
-            <span class="detail-label">Languages</span>
-            <span class="detail-val">English, Hindi</span>
-          </div>
+          <div class="detail-row"><span class="detail-icon">📍</span><span class="detail-label">Location</span><span class="detail-val">Noida, India</span></div>
+          <div class="detail-row"><span class="detail-icon">📧</span><span class="detail-label">Email</span><span class="detail-val"><a href="mailto:aniketthakur188@gmail.com">aniketthakur188@gmail.com</a></span></div>
+          <div class="detail-row"><span class="detail-icon">📞</span><span class="detail-label">Phone</span><span class="detail-val">+91-8383906880</span></div>
+          <div class="detail-row"><span class="detail-icon">💼</span><span class="detail-label">LinkedIn</span><span class="detail-val"><a href="https://linkedin.com/in/aniket-singh-a08166233" target="_blank">linkedin.com/in/aniket-singh</a></span></div>
+          <div class="detail-row"><span class="detail-icon">🗣️</span><span class="detail-label">Languages</span><span class="detail-val">English, Hindi</span></div>
         </div>
       </div>
       <div class="highlights-card">
         <h4>⚡ Key Highlights</h4>
         <div class="highlight-item">
           <div class="hi-icon">🚀</div>
-          <div>
-            <strong>High-Impact Financial Products</strong>
-            <span>Launched Personal &amp; Business Loans generating ₹50Cr+ in disbursals and 70K+ monthly applications</span>
-          </div>
+          <div><strong>High-Impact Financial Products</strong><span>Launched Personal &amp; Business Loans generating ₹50Cr+ in disbursals and 70K+ monthly applications</span></div>
         </div>
         <div class="highlight-item">
           <div class="hi-icon">📈</div>
-          <div>
-            <strong>Data-Driven Growth</strong>
-            <span>Achieved 15% growth in user acquisition and 12% improvement in retention through data-backed strategies</span>
-          </div>
+          <div><strong>Data-Driven Growth</strong><span>15% growth in user acquisition and 12% improvement in retention through data-backed strategies</span></div>
         </div>
         <div class="highlight-item">
           <div class="hi-icon">🛒</div>
-          <div>
-            <strong>E-commerce Innovation</strong>
-            <span>Built AI-driven dairy subscription platform improving delivery efficiency by 25% and repeat purchases by 30%</span>
-          </div>
+          <div><strong>E-commerce Innovation</strong><span>AI-driven dairy subscription platform improving delivery efficiency by 25% and repeat purchases by 30%</span></div>
         </div>
         <div class="highlight-item">
           <div class="hi-icon">🏆</div>
-          <div>
-            <strong>PMO Establishment</strong>
-            <span>Founded Project Management Office at CEDCOSS, improving project success rates by 25%</span>
-          </div>
+          <div><strong>PMO Establishment</strong><span>Founded Project Management Office at CEDCOSS, improving project success rates by 25%</span></div>
         </div>
         <div class="highlight-item">
           <div class="hi-icon">✅</div>
-          <div>
-            <strong>Quality Champion</strong>
-            <span>Led UAT initiatives reducing product defects by 30% and ensuring regulatory compliance</span>
-          </div>
+          <div><strong>Quality Champion</strong><span>Led UAT initiatives reducing product defects by 30% and ensuring regulatory compliance</span></div>
         </div>
       </div>
     </div>
@@ -705,6 +405,182 @@
   </div>
 </section>
 
+<!-- CASE STUDIES -->
+<section id="casestudies">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Deep Dives</span>
+      <h2>Case <span>Studies</span></h2>
+      <div class="section-line"></div>
+      <p>How I think, solve problems, and deliver results</p>
+    </div>
+    <div class="case-study-list">
+
+      <!-- CASE STUDY 1: BRE -->
+      <div class="cs-card">
+        <div class="cs-header">
+          <div class="cs-icon">⚙️</div>
+          <div class="cs-title-block">
+            <span class="cs-tag">FINTECH · AUTOMATION</span>
+            <h3>Business Rules Engine (BRE) Integration in Loan Origination System</h3>
+            <div class="cs-company">Enterslice Pvt. Ltd. &nbsp;·&nbsp; 2023–2024</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-section">
+            <h4 class="problem">🔴 Problem</h4>
+            <p>The existing Loan Origination System (LOS) relied heavily on manual credit decisioning. Loan officers had to review each application individually, causing high turnaround time (TAT), inconsistent decisions, human errors, and compliance risks. With 70K+ monthly applications, this was not scalable.</p>
+          </div>
+          <div class="cs-section">
+            <h4 class="approach">🟡 Approach</h4>
+            <ul>
+              <li>Mapped the end-to-end LOS workflow and identified 12 manual decision points</li>
+              <li>Conducted stakeholder interviews with credit team, tech leads, and compliance officers</li>
+              <li>Benchmarked competitor fintech platforms using BRE (Drools, IBM ODM)</li>
+              <li>Prioritized rules using RICE framework — credit score, income ratio, bureau checks</li>
+              <li>Created HLD/LLD documentation and collaborated with tech team on API integration</li>
+            </ul>
+          </div>
+          <div class="cs-section">
+            <h4 class="solution">🔵 Solution</h4>
+            <ul>
+              <li>Integrated a configurable Business Rules Engine into the LOS pipeline</li>
+              <li>Automated credit decisioning for 80% of standard loan applications</li>
+              <li>Built a rule management dashboard for the credit team to update rules without dev effort</li>
+              <li>Implemented real-time bureau API calls (CIBIL/Experian) within the decision flow</li>
+              <li>Ran parallel testing (UAT) with 500+ loan applications before go-live</li>
+            </ul>
+          </div>
+          <div class="cs-section">
+            <h4 class="impact">🟢 Impact & Results</h4>
+            <ul>
+              <li>Reduced Turnaround Time (TAT) by <strong style="color:var(--accent2)">20%</strong></li>
+              <li>Reduced manual review effort by <strong style="color:var(--accent2)">60%</strong></li>
+              <li>Cut product defects by <strong style="color:var(--accent2)">30%</strong> post UAT</li>
+              <li>Enabled scaling to <strong style="color:var(--accent2)">70K+ monthly applications</strong></li>
+              <li>Achieved <strong style="color:var(--accent2)">₹50Cr+</strong> in loan disbursals</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cs-metrics">
+          <span class="cs-metric">TAT ↓ 20%</span>
+          <span class="cs-metric">Manual Work ↓ 60%</span>
+          <span class="cs-metric">Defects ↓ 30%</span>
+          <span class="cs-metric">₹50Cr+ Disbursals</span>
+          <span class="cs-metric">70K+ Monthly Apps</span>
+        </div>
+      </div>
+
+      <!-- CASE STUDY 2: DAIRY ECOMMERCE -->
+      <div class="cs-card">
+        <div class="cs-header">
+          <div class="cs-icon">🥛</div>
+          <div class="cs-title-block">
+            <span class="cs-tag">E-COMMERCE · AI · SUBSCRIPTION</span>
+            <h3>AI-Powered Dairy Subscription E-commerce Platform</h3>
+            <div class="cs-company">Enterslice Pvt. Ltd. &nbsp;·&nbsp; 2023</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-section">
+            <h4 class="problem">🔴 Problem</h4>
+            <p>The dairy business faced high delivery inefficiencies, frequent subscription cancellations due to missed deliveries, and no reliable way to forecast demand. Manual subscription renewals were causing revenue leakage and poor customer retention.</p>
+          </div>
+          <div class="cs-section">
+            <h4 class="approach">🟡 Approach</h4>
+            <ul>
+              <li>Conducted user research — interviewed 40+ subscribers to understand pain points</li>
+              <li>Analysed delivery data to identify route inefficiencies and demand patterns</li>
+              <li>Mapped the subscription lifecycle to find drop-off points</li>
+              <li>Evaluated AI/ML demand forecasting models and route optimisation algorithms</li>
+              <li>Built product roadmap with phased delivery: Forecasting → Route Opt → Auto Renewals</li>
+            </ul>
+          </div>
+          <div class="cs-section">
+            <h4 class="solution">🔵 Solution</h4>
+            <ul>
+              <li>Built AI-driven demand forecasting engine to predict daily delivery volumes</li>
+              <li>Integrated route optimisation algorithm to cluster deliveries geographically</li>
+              <li>Automated subscription renewal system with smart reminders and retry logic</li>
+              <li>Developed a customer-facing app with real-time delivery tracking</li>
+              <li>Created an operations dashboard for fleet managers to monitor all routes</li>
+            </ul>
+          </div>
+          <div class="cs-section">
+            <h4 class="impact">🟢 Impact & Results</h4>
+            <ul>
+              <li>Delivery efficiency improved by <strong style="color:var(--accent2)">25%</strong></li>
+              <li>Repeat purchases increased by <strong style="color:var(--accent2)">30%</strong></li>
+              <li>Operational costs reduced by <strong style="color:var(--accent2)">18%</strong></li>
+              <li>Subscription churn reduced by <strong style="color:var(--accent2)">22%</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="cs-metrics">
+          <span class="cs-metric">Delivery Efficiency ↑ 25%</span>
+          <span class="cs-metric">Repeat Purchases ↑ 30%</span>
+          <span class="cs-metric">Ops Cost ↓ 18%</span>
+          <span class="cs-metric">Churn ↓ 22%</span>
+        </div>
+      </div>
+
+      <!-- CASE STUDY 3: GROWTH PROGRAM -->
+      <div class="cs-card">
+        <div class="cs-header">
+          <div class="cs-icon">📈</div>
+          <div class="cs-title-block">
+            <span class="cs-tag">GROWTH · RETENTION · DATA</span>
+            <h3>User Growth &amp; Retention Program — Referral &amp; Rewards</h3>
+            <div class="cs-company">Enterslice Pvt. Ltd. &nbsp;·&nbsp; 2023–2024</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-section">
+            <h4 class="problem">🔴 Problem</h4>
+            <p>User acquisition costs were high and organic growth was stagnant. Retention rates were declining month-over-month with no structured program to incentivise repeat usage or referrals. The product lacked a loyalty loop.</p>
+          </div>
+          <div class="cs-section">
+            <h4 class="approach">🟡 Approach</h4>
+            <ul>
+              <li>Analysed user funnel data — identified top drop-off stages using SQL &amp; Tableau</li>
+              <li>Segmented users by behaviour: new, active, dormant, churned</li>
+              <li>Researched referral mechanics from fintech leaders (Groww, Zerodha, Fi Money)</li>
+              <li>Defined success metrics: CAC, LTV, referral conversion rate, retention D30/D60</li>
+              <li>Ran A/B tests on reward structures — cashback vs. credit vouchers vs. fee waivers</li>
+            </ul>
+          </div>
+          <div class="cs-section">
+            <h4 class="solution">🔵 Solution</h4>
+            <ul>
+              <li>Designed a tiered referral program — higher rewards for quality referrals</li>
+              <li>Launched loyalty reward system tied to product usage milestones</li>
+              <li>Built personalised re-engagement campaigns for dormant users</li>
+              <li>Created real-time analytics dashboard to track program performance</li>
+              <li>Integrated reward wallet feature into the core product UI</li>
+            </ul>
+          </div>
+          <div class="cs-section">
+            <h4 class="impact">🟢 Impact & Results</h4>
+            <ul>
+              <li>User acquisition grew by <strong style="color:var(--accent2)">15%</strong></li>
+              <li>Retention improved by <strong style="color:var(--accent2)">12%</strong></li>
+              <li>Market penetration increased by <strong style="color:var(--accent2)">10%</strong></li>
+              <li>Referral conversion rate reached <strong style="color:var(--accent2)">18%</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="cs-metrics">
+          <span class="cs-metric">Acquisition ↑ 15%</span>
+          <span class="cs-metric">Retention ↑ 12%</span>
+          <span class="cs-metric">Market Penetration ↑ 10%</span>
+          <span class="cs-metric">Referral CVR 18%</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-inner">
@@ -718,19 +594,16 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-role">Assistant Product Manager</div>
-            <span class="exp-badge">Current Role</span>
-          </div>
+          <div class="exp-header"><div class="exp-role">Assistant Product Manager</div><span class="exp-badge">Current Role</span></div>
           <div class="exp-company">Enterslice Pvt. Ltd.</div>
           <div class="exp-meta">📅 Sep 2023 – Present &nbsp;|&nbsp; 📍 Noida, India</div>
           <ul class="exp-points">
             <li>Orchestrated the launch of financial products including Personal Loans and Business Loans, driving ₹50Cr+ disbursals and 70K+ monthly applications.</li>
-            <li>Transformed Loan Origination System (LOS) by integrating a Business Rules Engine (BRE), enabling automated credit decisioning and reducing TAT by 20%.</li>
+            <li>Integrated Business Rules Engine (BRE) into the LOS for automated credit decisioning, reducing TAT by 20%.</li>
             <li>Accelerated user acquisition by 15% and improved retention by 12% through data-driven referral and reward programs.</li>
             <li>Led UAT initiatives to ensure product quality and regulatory compliance, reducing defects by 30%.</li>
             <li>Formulated Go-To-Market strategies, enhancing product positioning and increasing market penetration by 10%.</li>
-            <li>Engineered a subscription-based dairy e-commerce platform with AI-driven demand forecasting, improving delivery efficiency by 25% and repeat purchases by 30%.</li>
+            <li>Engineered a subscription-based dairy e-commerce platform with AI-driven demand forecasting, improving delivery efficiency by 25%.</li>
             <li>Deployed route optimization algorithms and automated subscription renewals, reducing operational costs by 18%.</li>
           </ul>
         </div>
@@ -738,14 +611,12 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-role">Project Manager</div>
-          </div>
+          <div class="exp-header"><div class="exp-role">Project Manager</div></div>
           <div class="exp-company">CEDCOSS Technologies Pvt. Ltd.</div>
           <div class="exp-meta">📅 Dec 2022 – Sep 2023 &nbsp;|&nbsp; 📍 Lucknow, India</div>
           <ul class="exp-points">
-            <li>Directed end-to-end delivery of 10+ e-commerce projects in collaboration with platforms like Google and Shopify, increasing delivery efficiency by 15%.</li>
-            <li>Optimized development cycles by 10% through effective implementation of Agile/Scrum methodologies.</li>
+            <li>Directed end-to-end delivery of 10+ e-commerce projects in collaboration with Google and Shopify, increasing delivery efficiency by 15%.</li>
+            <li>Optimized development cycles by 10% through Agile/Scrum methodologies.</li>
             <li>Established a Project Management Office (PMO), improving project success rates by 25%.</li>
             <li>Specialized in Shopify app development, enhancing client satisfaction by 20%.</li>
           </ul>
@@ -754,15 +625,13 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-role">Product Manager</div>
-          </div>
+          <div class="exp-header"><div class="exp-role">Product Manager</div></div>
           <div class="exp-company">LBD Robotics Pvt. Ltd.</div>
           <div class="exp-meta">📅 Mar 2021 – Aug 2022 &nbsp;|&nbsp; 📍 Noida, India</div>
           <ul class="exp-points">
             <li>Delivered multiple automation-driven product initiatives, improving feature delivery efficiency by 15%.</li>
-            <li>Managed end-to-end web and mobile application development for an educational platform, increasing user engagement by 25%.</li>
-            <li>Designed data-driven marketing strategies, driving a 20% increase in revenue and business growth.</li>
+            <li>Managed end-to-end web and mobile app development for an educational platform, increasing user engagement by 25%.</li>
+            <li>Designed data-driven marketing strategies, driving a 20% increase in revenue.</li>
           </ul>
         </div>
       </div>
@@ -784,58 +653,36 @@
         <div class="project-icon-wrap">🏦</div>
         <h3>Financial Lending Platform</h3>
         <div class="project-company">Enterslice Pvt. Ltd.</div>
-        <p class="project-desc">Led end-to-end launch of Personal Loans and Business Loans. Integrated Business Rules Engine into the Loan Origination System for automated credit decisioning, reducing turnaround time significantly.</p>
-        <div class="project-metrics">
-          <span class="metric">₹50Cr+ Disbursals</span>
-          <span class="metric">70K+ Monthly Apps</span>
-          <span class="metric">TAT ↓ 20%</span>
-          <span class="metric">Defects ↓ 30%</span>
-        </div>
+        <p class="project-desc">Led end-to-end launch of Personal Loans and Business Loans. Integrated BRE into the LOS for automated credit decisioning, reducing turnaround time significantly.</p>
+        <div class="project-metrics"><span class="metric">₹50Cr+ Disbursals</span><span class="metric">70K+ Monthly Apps</span><span class="metric">TAT ↓ 20%</span></div>
       </div>
       <div class="project-card">
         <div class="project-icon-wrap">🥛</div>
-        <h3>AI-Powered Dairy E-commerce Platform</h3>
+        <h3>AI-Powered Dairy E-commerce</h3>
         <div class="project-company">Enterslice Pvt. Ltd.</div>
-        <p class="project-desc">Engineered a subscription-based dairy e-commerce platform with AI-driven demand forecasting. Deployed route optimization and automated subscription renewals for enhanced experience.</p>
-        <div class="project-metrics">
-          <span class="metric">Delivery ↑ 25%</span>
-          <span class="metric">Repeat Purchases ↑ 30%</span>
-          <span class="metric">Ops Cost ↓ 18%</span>
-        </div>
+        <p class="project-desc">Subscription-based platform with AI demand forecasting, route optimization, and automated renewals for an enhanced customer experience.</p>
+        <div class="project-metrics"><span class="metric">Delivery ↑ 25%</span><span class="metric">Repeat Purchases ↑ 30%</span><span class="metric">Cost ↓ 18%</span></div>
       </div>
       <div class="project-card">
         <div class="project-icon-wrap">🛒</div>
         <h3>E-commerce Projects Suite</h3>
         <div class="project-company">CEDCOSS Technologies</div>
-        <p class="project-desc">Directed delivery of 10+ e-commerce projects with Google and Shopify. Established a Project Management Office (PMO) and specialized in Shopify app development.</p>
-        <div class="project-metrics">
-          <span class="metric">10+ Projects</span>
-          <span class="metric">Efficiency ↑ 15%</span>
-          <span class="metric">PMO Established</span>
-          <span class="metric">Satisfaction ↑ 20%</span>
-        </div>
+        <p class="project-desc">Directed delivery of 10+ e-commerce projects with Google and Shopify. Established PMO and specialized in Shopify app development.</p>
+        <div class="project-metrics"><span class="metric">10+ Projects</span><span class="metric">Efficiency ↑ 15%</span><span class="metric">Satisfaction ↑ 20%</span></div>
       </div>
       <div class="project-card">
         <div class="project-icon-wrap">🤖</div>
         <h3>Educational Platform — Web &amp; Mobile</h3>
         <div class="project-company">LBD Robotics Pvt. Ltd.</div>
-        <p class="project-desc">Managed end-to-end development of a web and mobile educational platform. Designed and executed data-driven marketing strategies to drive growth and engagement.</p>
-        <div class="project-metrics">
-          <span class="metric">Engagement ↑ 25%</span>
-          <span class="metric">Revenue ↑ 20%</span>
-          <span class="metric">Delivery ↑ 15%</span>
-        </div>
+        <p class="project-desc">End-to-end development of web and mobile educational platform with data-driven marketing strategies for growth and engagement.</p>
+        <div class="project-metrics"><span class="metric">Engagement ↑ 25%</span><span class="metric">Revenue ↑ 20%</span></div>
       </div>
       <div class="project-card">
         <div class="project-icon-wrap">📈</div>
         <h3>Growth &amp; Retention Program</h3>
         <div class="project-company">Enterslice Pvt. Ltd.</div>
-        <p class="project-desc">Designed and implemented data-backed referral and reward programs to drive user acquisition and improve retention. Leveraged analytics to continuously optimize performance.</p>
-        <div class="project-metrics">
-          <span class="metric">Acquisition ↑ 15%</span>
-          <span class="metric">Retention ↑ 12%</span>
-          <span class="metric">Penetration ↑ 10%</span>
-        </div>
+        <p class="project-desc">Data-backed referral and reward programs to drive user acquisition and retention, with real-time analytics to continuously optimise performance.</p>
+        <div class="project-metrics"><span class="metric">Acquisition ↑ 15%</span><span class="metric">Retention ↑ 12%</span><span class="metric">Penetration ↑ 10%</span></div>
       </div>
     </div>
   </div>
@@ -852,10 +699,7 @@
     </div>
     <div class="edu-certs-grid">
       <div class="edu-card">
-        <div class="card-top">
-          <div class="card-top-icon">🎓</div>
-          <h3>Education</h3>
-        </div>
+        <div class="card-top"><div class="card-top-icon">🎓</div><h3>Education</h3></div>
         <div class="edu-item">
           <h4>Bachelor of Science (B.Sc.) in Information Technology</h4>
           <p>🏫 Himalayan University</p>
@@ -863,10 +707,7 @@
         </div>
       </div>
       <div class="cert-card">
-        <div class="card-top">
-          <div class="card-top-icon">🏆</div>
-          <h3>Certifications</h3>
-        </div>
+        <div class="card-top"><div class="card-top-icon">🏆</div><h3>Certifications</h3></div>
         <div class="cert-list">
           <div class="cert-item"><span class="cert-icon">🥇</span><span class="cert-name">PRINCE2 Certification</span></div>
           <div class="cert-item"><span class="cert-icon">☁️</span><span class="cert-name">AWS Essential Training</span></div>
@@ -889,26 +730,10 @@
       <p>Open to new opportunities, collaborations, or just a good conversation</p>
     </div>
     <div class="contact-grid">
-      <div class="contact-card">
-        <div class="contact-card-icon">📧</div>
-        <h4>Email</h4>
-        <a href="mailto:aniketthakur188@gmail.com">aniketthakur188@gmail.com</a>
-      </div>
-      <div class="contact-card">
-        <div class="contact-card-icon">📞</div>
-        <h4>Phone</h4>
-        <a href="tel:+918383906880">+91-8383906880</a>
-      </div>
-      <div class="contact-card">
-        <div class="contact-card-icon">💼</div>
-        <h4>LinkedIn</h4>
-        <a href="https://linkedin.com/in/aniket-singh-a08166233" target="_blank">linkedin.com/in/aniket-singh</a>
-      </div>
-      <div class="contact-card">
-        <div class="contact-card-icon">📍</div>
-        <h4>Location</h4>
-        <span>Noida, India</span>
-      </div>
+      <div class="contact-card"><div class="contact-card-icon">📧</div><h4>Email</h4><a href="mailto:aniketthakur188@gmail.com">aniketthakur188@gmail.com</a></div>
+      <div class="contact-card"><div class="contact-card-icon">📞</div><h4>Phone</h4><a href="tel:+918383906880">+91-8383906880</a></div>
+      <div class="contact-card"><div class="contact-card-icon">💼</div><h4>LinkedIn</h4><a href="https://linkedin.com/in/aniket-singh-a08166233" target="_blank">linkedin.com/in/aniket-singh</a></div>
+      <div class="contact-card"><div class="contact-card-icon">📍</div><h4>Location</h4><span>Noida, India</span></div>
     </div>
   </div>
 </section>
