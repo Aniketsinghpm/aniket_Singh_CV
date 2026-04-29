@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aniket Singh | Product & Project Manager</title>
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --accent: #2d7dd2;
+      --accent-light: #4a9de8;
+      --light-bg: #f4f7fb;
+      --white: #ffffff;
+      --text: #2c2c2c;
+      --text-light: #666;
+      --border: #e0e8f0;
+      --gradient: linear-gradient(135deg, #1a3a5c 0%, #2d7dd2 100%);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--white);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; width: 100%;
+      background: rgba(26, 58, 92, 0.97);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+    .nav-logo {
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .nav-logo span { color: var(--accent-light); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent-light); }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    #home::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+      top: -100px; right: -100px;
+    }
+    #home::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+      bottom: -80px; left: -80px;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; }
+    .hero-avatar {
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 3px solid rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 3rem;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+    .hero-content .title {
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+    .hero-tagline {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 580px;
+      margin: 0 auto 32px;
+      line-height: 1.8;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 16px 28px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--white);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: 13px 30px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s;
+      display: inline-block;
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--primary);
+    }
+    .btn-white:hover { background: #e8f0fb; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+    /* ── SECTIONS ── */
+    section { padding: 90px 40px; }
+    section:nth-child(even) { background: var(--light-bg); }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .section-header p { color: var(--text-light); font-size: 1rem; }
+    .section-line {
+      width: 56px; height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 12px auto 0;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .about-text h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+    .about-text p { color: var(--text-light); margin-bottom: 16px; font-size: 0.97rem; }
+    .about-details { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+    .detail-row { display: flex; align-items: center; gap: 12px; font-size: 0.93rem; }
+    .detail-icon { font-size: 1.1rem; width: 28px; text-align: center; }
+    .detail-label { font-weight: 600; color: var(--primary); min-width: 80px; }
+    .detail-val { color: var(--text-light); }
+
+    .about-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 8px 32px rgba(26,58,92,0.1);
+      border: 1px solid var(--border);
+    }
+    .about-card h4 { font-size: 1rem; color: var(--primary); margin-bottom: 18px; font-weight: 700; }
+    .highlight-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .highlight-item:last-child { border-bottom: none; }
+    .highlight-item .icon { font-size: 1.2rem; flex-shrink: 0; }
+    .highlight-item strong { display: block; color: var(--primary); margin-bottom: 2px; }
+    .highlight-item span { color: var(--text-light); }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .skill-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.25s;
+      box-shadow: 0 2px 8px rgba(26,58,92,0.05);
+    }
+    .skill-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 6px 20px rgba(45,125,210,0.15);
+      transform: translateY(-3px);
+    }
+    .skill-icon {
+      width: 42px; height: 42px;
+      background: var(--gradient);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .skill-name { font-size: 0.9rem; font-weight: 600; color: var(--primary); }
+
+    .tech-skills {
+      margin-top: 48px;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 16px rgba(26,58,92,0.06);
+    }
+    .tech-skills h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 24px; font-weight: 700; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tech-tag {
+      background: #e8f0fb;
+      color: var(--primary);
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* ── EXPERIENCE ── */
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--accent), var(--primary));
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -26px; top: 8px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 3px var(--accent);
+    }
+    .exp-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 4px 16px rgba(26,58,92,0.06);
+      transition: box-shadow 0.25s;
+    }
+    .exp-card:hover { box-shadow: 0 8px 28px rgba(26,58,92,0.12); }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 6px; }
+    .exp-role { font-size: 1.15rem; font-weight: 700; color: var(--primary); }
+    .exp-badge {
+      background: var(--gradient);
+      color: white;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .exp-company { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+    .exp-meta { color: var(--text-light); font-size: 0.85rem; margin-bottom: 16px; }
+    .exp-points { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .exp-points li {
+      display: flex;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    .exp-points li::before { content: '▸'; color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 4px 16px rgba(26,58,92,0.06);
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(26,58,92,0.14);
+      border-color: var(--accent);
+    }
+    .project-icon {
+      width: 52px; height: 52px;
+      background: var(--gradient);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+    .project-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+    .project-company { font-size: 0.82rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    .project-desc { font-size: 0.9rem; color: var(--text-light); margin-bottom: 18px; flex: 1; line-height: 1.7; }
+    .project-metrics { display: flex; flex-wrap: wrap; gap: 8px; }
+    .metric {
+      background: #e8f0fb;
+      color: var(--primary);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* ── EDUCATION & CERTS ── */
+    .edu-certs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .edu-card, .cert-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 4px 16px rgba(26,58,92,0.06);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .card-header-icon {
+      width: 46px; height: 46px;
+      background: var(--gradient);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .card-header h3 { font-size: 1.05rem; font-weight: 700; color: var(--primary); }
+    .edu-item h4 { font-size: 1rem; font-weight: 700; color: var(--primary); }
+    .edu-item p { font-size: 0.88rem; color: var(--text-light); margin-top: 4px; }
+    .cert-list { display: flex; flex-direction: column; gap: 14px; }
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--light-bg);
+      border-radius: 10px;
+    }
+    .cert-badge { font-size: 1.4rem; }
+    .cert-name { font-size: 0.88rem; font-weight: 600; color: var(--primary); }
+
+    /* ── CONTACT ── */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-info h3 { font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+    .contact-info p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 28px; }
+    .contact-items { display: flex; flex-direction: column; gap: 18px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .contact-icon {
+      width: 46px; height: 46px;
+      background: var(--gradient);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .contact-item-text strong { display: block; font-size: 0.85rem; color: var(--text-light); margin-bottom: 2px; font-weight: 500; }
+    .contact-item-text a, .contact-item-text span {
+      font-size: 0.95rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .contact-item-text a:hover { color: var(--accent); }
+
+    .contact-form {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 8px 32px rgba(26,58,92,0.08);
+    }
+    .contact-form h3 { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-family: inherit;
+      transition: border-color 0.2s;
+      background: var(--white);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .btn-submit {
+      width: 100%;
+      padding: 13px;
+      background: var(--gradient);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      font-family: inherit;
+    }
+    .btn-submit:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.88rem;
+    }
+    footer span { color: var(--accent-light); font-weight: 600; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      section { padding: 60px 20px; }
+      .about-grid, .edu-certs-grid, .contact-wrapper { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 2.2rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Aniket <span>Singh</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-avatar">👤</div>
+    <h1>Aniket Singh</h1>
+    <div class="title">Product Manager &amp; Project Manager</div>
+    <p class="hero-tagline">
+      Dynamic and results-oriented Product &amp; Project Manager driving innovation across IT and e-commerce.
+      Nearly 5 years of experience delivering scalable solutions and measurable business impact.
+    </p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">5+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">₹50Cr+</span>
+        <span class="stat-label">Disbursals Driven</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">70K+</span>
+        <span class="stat-label">Monthly Applications</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Certifications</span>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-white">Get In Touch</a>
+      <a href="#experience" class="btn btn-outline">View My Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>About Me</h2>
+      <div class="section-line"></div>
+      <p>A little bit about who I am and what I bring to the table</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Hi, I'm Aniket 👋</h3>
+        <p>I'm a <strong>Product & Project Manager</strong> with nearly 5 years of experience in IT and e-commerce domains. I specialize in driving innovation, leading cross-functional teams, and delivering products that create real business impact.</p>
+        <p>Currently working as <strong>Assistant Product Manager at Enterslice Pvt. Ltd.</strong>, I lead the launch and optimization of financial products while managing a team of 6–7 professionals to achieve strategic objectives.</p>
+        <p>I'm passionate about user-centric design, data-driven decision making, and building products that users love.</p>
+        <div class="about-details">
+          <div class="detail-row">
+            <span class="detail-icon">📍</span>
+            <span class="detail-label">Location</span>
+            <span class="detail-val">Noida, India</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">📧</span>
+            <span class="detail-label">Email</span>
+            <span class="detail-val">aniketthakur188@gmail.com</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">📞</span>
+            <span class="detail-label">Phone</span>
+            <span class="detail-val">+91-8383906880</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">🌐</span>
+            <span class="detail-label">LinkedIn</span>
+            <span class="detail-val"><a href="https://linkedin.com/in/aniket-singh-a08166233" target="_blank" style="color: var(--accent);">linkedin.com/in/aniket-singh</a></span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">🗣️</span>
+            <span class="detail-label">Languages</span>
+            <span class="detail-val">English, Hindi</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-card">
+        <h4>⚡ Key Highlights</h4>
+        <div class="highlight-item">
+          <span class="icon">🚀</span>
+          <div>
+            <strong>High-Impact Financial Products</strong>
+            <span>Launched Personal & Business Loans generating ₹50Cr+ in disbursals and 70K+ monthly applications</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="icon">📈</span>
+          <div>
+            <strong>Data-Driven Growth</strong>
+            <span>Achieved 15% growth in user acquisition and 12% improvement in retention through data-backed strategies</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="icon">🛒</span>
+          <div>
+            <strong>E-commerce Innovation</strong>
+            <span>Built AI-driven dairy subscription platform improving delivery efficiency by 25% and repeat purchases by 30%</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="icon">🏆</span>
+          <div>
+            <strong>PMO Establishment</strong>
+            <span>Founded Project Management Office at CEDCOSS, improving project success rates by 25%</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="icon">✅</span>
+          <div>
+            <strong>Quality Champion</strong>
+            <span>Led UAT initiatives reducing product defects by 30% and ensuring regulatory compliance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Key Strengths</h2>
+      <div class="section-line"></div>
+      <p>Core competencies that define my professional approach</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🗺️</div>
+        <span class="skill-name">Product Lifecycle &amp; Roadmap Management</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚡</div>
+        <span class="skill-name">Agile, Scrum &amp; Delivery Execution</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎯</div>
+        <span class="skill-name">Strategic Product Development</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <span class="skill-name">Market Penetration &amp; Growth Strategy</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🤝</div>
+        <span class="skill-name">Cross-Functional Collaboration</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔢</div>
+        <span class="skill-name">Data Analysis &amp; Performance Metrics</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">💰</div>
+        <span class="skill-name">Budget &amp; Resource Optimization</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎨</div>
+        <span class="skill-name">UI/UX &amp; User-Centric Design</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔌</div>
+        <span class="skill-name">API Integration &amp; Documentation</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🧪</div>
+        <span class="skill-name">User Acceptance Testing (UAT)</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🏦</div>
+        <span class="skill-name">Financial &amp; E-commerce Products</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🛡️</div>
+        <span class="skill-name">Risk Management &amp; Continuous Improvement</span>
+      </div>
+    </div>
+    <div class="tech-skills">
+      <h3>🛠️ Technical Tools &amp; Skills</h3>
+      <div class="tech-tags">
+        <span class="tech-tag">Product Lifecycle Management</span>
+        <span class="tech-tag">Agile &amp; Scrum</span>
+        <span class="tech-tag">Project Planning &amp; Execution</span>
+        <span class="tech-tag">Roadmap Development</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">Tableau</span>
+        <span class="tech-tag">Data Analysis</span>
+        <span class="tech-tag">HLD / LLD Documentation</span>
+        <span class="tech-tag">Business Rules Engine (BRE)</span>
+        <span class="tech-tag">Loan Origination System (LOS)</span>
+        <span class="tech-tag">Shopify</span>
+        <span class="tech-tag">Google Platforms</span>
+        <span class="tech-tag">AI-Driven Forecasting</span>
+        <span class="tech-tag">Route Optimization</span>
+        <span class="tech-tag">Go-To-Market Strategy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Work Experience</h2>
+      <div class="section-line"></div>
+      <p>My professional journey across product and project management</p>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-role">Assistant Product Manager</div>
+            <span class="exp-badge">Current</span>
+          </div>
+          <div class="exp-company">Enterslice Pvt. Ltd.</div>
+          <div class="exp-meta">📅 Sep 2023 – Present &nbsp;|&nbsp; 📍 Noida, India</div>
+          <ul class="exp-points">
+            <li>Orchestrated the launch of financial products including Personal Loans and Business Loans, driving ₹50Cr+ disbursals and 70K+ monthly applications.</li>
+            <li>Transformed Loan Origination System (LOS) workflow by integrating a Business Rules Engine (BRE), enabling automated credit decisioning and reducing TAT by 20%.</li>
+            <li>Accelerated user acquisition by 15% and improved retention by 12% through data-driven referral and reward programs.</li>
+            <li>Led UAT initiatives to ensure product quality and regulatory compliance, reducing defects by 30%.</li>
+            <li>Formulated Go-To-Market strategies, enhancing product positioning and increasing market penetration by 10%.</li>
+            <li>Engineered a subscription-based dairy e-commerce platform with AI-driven demand forecasting, improving delivery efficiency by 25% and repeat purchases by 30%.</li>
+            <li>Collaborated with cross-functional teams to deploy route optimization algorithms and automated subscription renewals, reducing operational costs by 18%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-role">Project Manager</div>
+          </div>
+          <div class="exp-company">CEDCOSS Technologies Pvt. Ltd.</div>
+          <div class="exp-meta">📅 Dec 2022 – Sep 2023 &nbsp;|&nbsp; 📍 Lucknow, India</div>
+          <ul class="exp-points">
+            <li>Directed end-to-end delivery of 10+ e-commerce projects in collaboration with platforms like Google and Shopify, increasing delivery efficiency by 15%.</li>
+            <li>Optimized development cycles by 10% through effective implementation of Agile/Scrum methodologies.</li>
+            <li>Established a Project Management Office (PMO), improving project success rates by 25%.</li>
+            <li>Specialized in Shopify app development, enhancing client satisfaction by 20%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-role">Product Manager</div>
+          </div>
+          <div class="exp-company">LBD Robotics Pvt. Ltd.</div>
+          <div class="exp-meta">📅 Mar 2021 – Aug 2022 &nbsp;|&nbsp; 📍 Noida, India</div>
+          <ul class="exp-points">
+            <li>Delivered multiple automation-driven product initiatives, improving feature delivery efficiency by 15%.</li>
+            <li>Managed end-to-end web and mobile application development for an educational platform, increasing user engagement by 25%.</li>
+            <li>Designed data-driven marketing strategies, driving a 20% increase in revenue and supporting business growth.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Featured Projects</h2>
+      <div class="section-line"></div>
+      <p>High-impact products and projects I've led and delivered</p>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon">🏦</div>
+        <h3>Financial Lending Platform</h3>
+        <div class="project-company">Enterslice Pvt. Ltd.</div>
+        <p class="project-desc">Led the end-to-end launch of Personal Loans and Business Loans products. Integrated a Business Rules Engine (BRE) into the Loan Origination System for automated credit decisioning, reducing turnaround time significantly.</p>
+        <div class="project-metrics">
+          <span class="metric">₹50Cr+ Disbursals</span>
+          <span class="metric">70K+ Monthly Apps</span>
+          <span class="metric">TAT ↓ 20%</span>
+          <span class="metric">Defects ↓ 30%</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🥛</div>
+        <h3>AI-Powered Dairy E-commerce Platform</h3>
+        <div class="project-company">Enterslice Pvt. Ltd.</div>
+        <p class="project-desc">Engineered a subscription-based dairy e-commerce platform with AI-driven demand forecasting. Deployed route optimization algorithms and automated subscription renewals for enhanced customer experience.</p>
+        <div class="project-metrics">
+          <span class="metric">Delivery Efficiency ↑ 25%</span>
+          <span class="metric">Repeat Purchases ↑ 30%</span>
+          <span class="metric">Ops Cost ↓ 18%</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🛒</div>
+        <h3>E-commerce Projects Suite</h3>
+        <div class="project-company">CEDCOSS Technologies</div>
+        <p class="project-desc">Directed delivery of 10+ e-commerce projects in collaboration with Google and Shopify platforms. Established a Project Management Office (PMO) and specialized in Shopify app development.</p>
+        <div class="project-metrics">
+          <span class="metric">10+ Projects Delivered</span>
+          <span class="metric">Efficiency ↑ 15%</span>
+          <span class="metric">PMO Established</span>
+          <span class="metric">Client Satisfaction ↑ 20%</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🤖</div>
+        <h3>Educational Platform — Web &amp; Mobile App</h3>
+        <div class="project-company">LBD Robotics Pvt. Ltd.</div>
+        <p class="project-desc">Managed end-to-end development of a web and mobile application for an educational platform. Designed and executed data-driven marketing strategies to drive growth and engagement.</p>
+        <div class="project-metrics">
+          <span class="metric">User Engagement ↑ 25%</span>
+          <span class="metric">Revenue ↑ 20%</span>
+          <span class="metric">Feature Delivery ↑ 15%</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📈</div>
+        <h3>Growth &amp; Retention Program</h3>
+        <div class="project-company">Enterslice Pvt. Ltd.</div>
+        <p class="project-desc">Designed and implemented data-backed referral and reward programs to drive user acquisition and improve retention metrics. Leveraged analytics to continuously optimize the programs.</p>
+        <div class="project-metrics">
+          <span class="metric">User Acquisition ↑ 15%</span>
+          <span class="metric">Retention ↑ 12%</span>
+          <span class="metric">Market Penetration ↑ 10%</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & CERTS -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Education &amp; Certifications</h2>
+      <div class="section-line"></div>
+      <p>Academic background and professional credentials</p>
+    </div>
+    <div class="edu-certs-grid">
+      <div class="edu-card">
+        <div class="card-header">
+          <div class="card-header-icon">🎓</div>
+          <h3>Education</h3>
+        </div>
+        <div class="edu-item">
+          <h4>Bachelor of Science (B.Sc.) in Information Technology</h4>
+          <p>🏫 Himalayan University</p>
+          <p>📅 2018 – 2021</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="card-header">
+          <div class="card-header-icon">🏆</div>
+          <h3>Certifications</h3>
+        </div>
+        <div class="cert-list">
+          <div class="cert-item">
+            <span class="cert-badge">🥇</span>
+            <span class="cert-name">PRINCE2 Certification</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-badge">☁️</span>
+            <span class="cert-name">AWS Essential Training</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-badge">📊</span>
+            <span class="cert-name">Business Analyst Certification</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-badge">🤖</span>
+            <span class="cert-name">PMI – AI Product Manager</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-badge">📈</span>
+            <span class="cert-name">Product Management: Strategy &amp; Metrics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Get In Touch</h2>
+      <div class="section-line"></div>
+      <p>Let's connect and explore opportunities together</p>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3>Let's Talk!</h3>
+        <p>Whether you have a project in mind, want to collaborate, or just want to say hello — my inbox is always open.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-item-text">
+              <strong>Email</strong>
+              <a href="mailto:aniketthakur188@gmail.com">aniketthakur188@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-item-text">
+              <strong>Phone</strong>
+              <a href="tel:+918383906880">+91-8383906880</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💼</div>
+            <div class="contact-item-text">
+              <strong>LinkedIn</strong>
+              <a href="https://linkedin.com/in/aniket-singh-a08166233" target="_blank">linkedin.com/in/aniket-singh</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-item-text">
+              <strong>Location</strong>
+              <span>Noida, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="John Doe" />
+          </div>
+          <div class="form-group">
+            <label>Your Email</label>
+            <input type="email" placeholder="john@example.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="How can I help you?" />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Write your message here..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="alert('Thank you for reaching out! Aniket will get back to you soon.')">Send Message ✉️</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Designed &amp; built with ❤️ &nbsp;|&nbsp; <span>Aniket Singh</span> &nbsp;|&nbsp; Product Manager &amp; Project Manager &nbsp;|&nbsp; © 2026</p>
+</footer>
+
+</body>
+</html>
